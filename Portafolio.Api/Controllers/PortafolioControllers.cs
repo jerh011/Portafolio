@@ -20,7 +20,7 @@ public class PortafolioControllers : ControllerBase
         _portafolioServices=portafolioServices;
     }
 
-   [HttpGet("Optener_Perfil")]
+   [HttpGet]
 
     public async Task <IActionResult> GetDrivers()
     {
@@ -28,14 +28,14 @@ public class PortafolioControllers : ControllerBase
             return Ok(drivers);
     }
 
-    [HttpGet("Obtener_Perfil_por_id/{Id}")]
+    [HttpGet("{Id}")]
     public async Task<IActionResult> GetDriversByID(string Id)
     {
 
         return Ok(await _portafolioServices.GetPerfilById(Id));
     }
 
-    [HttpPost("Agregar_Perfil")]
+    [HttpPost]
     public async Task<IActionResult> CreateDriver([FromBody] Perfil perfil)
     {
         if (perfil == null)
@@ -47,7 +47,7 @@ public class PortafolioControllers : ControllerBase
         return Created("Created", true);
     }
 
-     [HttpPut("actualizar_Perfil_por_id/{Id}")]
+     [HttpPut("{Id}")]
     public async Task<IActionResult> UpdateDriver([FromBody] Perfil perfil, string Id)
     {
         if (perfil == null)
@@ -61,7 +61,7 @@ public class PortafolioControllers : ControllerBase
         return Created("Created", true);
     }
 
-    [HttpDelete("Eliminar-Perfil-por-Id/{Id}")]
+    [HttpDelete("{Id}")]
     public async Task<IActionResult> Deletedriver(string Id)
     {
 
