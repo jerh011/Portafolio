@@ -43,6 +43,7 @@ public class PortafolioControllers : ControllerBase
         if (perfil.nombre == string.Empty)
             ModelState.AddModelError("Name", "El driver no debe estar vacio");
 
+        perfil.Id = null;
         await _portafolioServices.InsertPerfil(perfil);
         return Created("Created", true);
     }

@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 //builder.Services.AddSingleton<PortafolioServices>();//Agregar servicios
 builder.Services.AddScoped<PortafolioServices>();
+builder.Services.AddScoped<TecnologiaServices>();
 
 builder.Services.AddCors(options => options.AddPolicy("AngularClient", policy => {
 	policy.WithOrigins("http://localhost:4200")

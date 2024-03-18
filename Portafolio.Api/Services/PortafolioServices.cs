@@ -17,12 +17,12 @@ public class PortafolioServices
     {
         //Inicializar mi cliente de MongoDB 
         var mongoClient = new MongoClient(databaseSettings.Value.ConnectionString);
-       //Conectar a la base de datos MongoDB
+        //Conectar a la base de datos MongoDB
         var mongoDB =
         mongoClient.GetDatabase(databaseSettings.Value.DatabaseName);
         _driverCollection =
          mongoDB.GetCollection<Perfil>
-            (databaseSettings.Value.CollectionName);
+            (databaseSettings.Value.Collections["perfil"]);
     }
    
     public async Task<List<Perfil>> GetAsync() =>
