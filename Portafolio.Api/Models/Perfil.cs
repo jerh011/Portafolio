@@ -13,6 +13,9 @@ public string nombre{get;set;}
 [BsonElement("segundoNombre")]
 public string segundoNombre{get;set;}
 
+[BsonElement("descripcion")]
+public string descripcion{get;set;}
+
 [BsonElement("apellidoPaterno")]
 public string apellidoPaterno{get;set;}
 
